@@ -1,0 +1,48 @@
+version: '3.7'
+
+services:
+  redis:
+    ports:
+      - "127.0.0.1:6379:6379"
+  bridge0:
+    ports:
+      - "127.0.0.1:5001:5001"
+    volumes:
+      - ../build:/root/build
+
+  bridge1:
+    ports:
+      - "127.0.0.1:5002:5002"
+    volumes:
+      - ../build:/root/build
+
+  bridge2:
+    ports:
+      - "127.0.0.1:5003:5003"
+    volumes:
+      - ../build:/root/build
+
+  bridge3:
+    ports:
+      - "127.0.0.1:5004:5004"
+    volumes:
+      - ../build:/root/build
+
+  bridge4:
+    ports:
+      - "127.0.0.1:5005:5005"
+    volumes:
+      - ../build:/root/build
+
+
+
+  nginx:
+    environment:
+      CONTAINER_NAME: node
+      APP_QTY: 5
+    depends_on:
+      - bridge0
+      - bridge1
+      - bridge2
+      - bridge3
+      - bridge4

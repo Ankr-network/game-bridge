@@ -1,0 +1,3 @@
+BRIDGE_URL=sf.connect.mirage.xyz
+CERTBOT_EMAIL=bridge@mirage.xyz
+CLOUDFLARE=false
