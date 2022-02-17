@@ -73,3 +73,8 @@ services:
         limits:
           memory: 1G
 
+  unreal-sdk:
+    image: miragexyz/mirage-unreal-sdk:latest
+    environment:
+      NODE_ENV: production
+
